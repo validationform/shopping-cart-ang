@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div>
+  <table>
+    <tr>
+      <th>Sr.No</th>
+      <th>Product Name</th>
+      <th>Product Image</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+      <th>Action</th> 
+    </tr>
+    <div *ngIf="showMe">
+    <tr *ngFor="let item of shopData; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ item.productName1 }}</td>
+      <td><img src="{{ item.img1 }}" /></td>
+      <td>{{ item.desc1 }}</td>
+      <td>{{ item.amt1 | currency: "INR" }}</td>
+      <td>
+        <p>{{ item.qty1 }}</p>
+      </td>
+      <td>{{ item.amt1 * item.qty1 | currency: "INR" }}</td>
+      <td>
+        <button><i class="fas fa-trash-alt"></i>delete</button>
+      </td>
+    </tr>
+  </div>
+  </table>
+</div>

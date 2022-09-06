@@ -1,0 +1,32 @@
+<app-header [cd]="cartItem" [onToggleS]="onToggle"></app-header>
+<div *ngIf="showMe">
+  <div *ngFor="let shopVar of shopData1 | async " class="inner-div">
+    <div>
+      <img src="{{ shopVar.img }}" class="img1" />
+    </div>
+    <div class="productname-div">
+      <p class="productname">{{ shopVar.productName}}</p>
+    </div>
+    <div class="price-div">
+        <h3 class="price">{{ shopVar.amt | currency: "INR" }}</h3>
+    </div>
+      <div class="assuredimage-div">
+      <img src="{{ shopVar.aimg }}" class="aimg" />
+    </div>
+    <div class="description-div">
+      <p class="desc-paragraph">{{ shopVar.desc }}</p>
+    </div>
+    <div>
+        <button mat-flat-button color="primary" class="add-to-cart" (click)="addCart(shopVar)" >Add To Cart</button>
+    </div>
+       
+  </div>
+</div>
+<br>
+
+<app-footer></app-footer>
+<app-cart
+  [shopData]="cartArray"
+  [shopAdd]="shopData1"
+  *ngIf="!showMe"
+></app-cart> 

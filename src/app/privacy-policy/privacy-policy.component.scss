@@ -1,0 +1,37 @@
+.outer-div{
+    background-color: #f1f3f6;
+    margin-top: -20px;
+}
+.outer-div1{
+    margin-top:1px;
+    margin-left: 300px;
+    padding-left: 30px;
+    padding-right: 10px;
+    background-color:white;
+    width:900px;
+    height:fit-content;
+}
+.inner-div1{
+    position: absolute;
+    top:80px;
+    left:350px;
+}
+.inner-div2{
+    position: absolute;
+    top:100px;
+    left: 500px;
+}
+.privacy-policy{
+    position: relative;
+    top:20px;
+}
+.privacy-policy-div2{
+    position: relative;
+    top:40px;
+    left:330px;
+}
+a{
+    text-decoration: none;
+    font-size: 13px;
+    color:#2874f0;
+}

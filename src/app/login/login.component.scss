@@ -1,0 +1,106 @@
+.div1{
+    margin-top: 60px;
+    margin-left:500px;
+    width:600px;
+    height:400px;
+    background-color:white;
+    border-radius: 7px;
+    box-shadow: 20px 20px 50px grey;
+}
+.block1{
+    position: absolute;
+    top:180px;
+    width:250px;
+    height:400px;
+    background-color: #2874f0;   
+    border-radius: 7px 0px 0px 7px;
+}
+.block2{
+    position: absolute;
+    top:180px;
+    width:250px;
+    height:400px;   
+}
+.mat-form-field1{
+    position: absolute;
+    top:40px;
+    left:310px;
+    width:250px;
+}
+.mat-form-field2{
+    position: absolute;
+    top:110px;
+    left:310px;
+    width:250px;
+}
+.mat-button{
+    position: absolute;
+    top:250px;
+    left:310px;
+    width:250px;
+    background-color: orangered;
+    color:white;
+}
+.mat-button:hover{
+    background-color: rgb(224, 73, 18);
+}
+.p1{
+    position: absolute;
+    top:190px;
+    left:310px;
+    width:250px;
+    font-size:12px;
+}
+.block1-p1{
+    position: absolute;
+    top:25px;
+    left:20px;
+    width:250px;
+    color:white;
+    font-size:30px;
+    font-style: bold;
+}
+.block1-p2{
+    position: absolute;
+    top:70px;
+    left:20px;
+    width:250px;
+    color:white;
+    font-size:15px;
+}
+.terms-and-condition{
+    color: blue;
+}
+img{
+    position: absolute;
+    top:250px;
+    left:20px;
+}
+.ancher-create-account{
+    position: absolute;
+    top:365px;
+    left:320px;
+    width:280px;
+}
+.create-account{
+
+    display:inline;
+    text-decoration:none;
+    color: blue;
+}
+.username-span1{
+    position: absolute;
+    top:90px;
+    left:330px;
+    width:200px;
+    height:200px;
+    font-size: 12px;
+}
+.username-span2{
+    position: absolute;
+    top:160px;
+    left:330px;
+    width:200px;
+    height:200px;
+    font-size: 12px;
+}

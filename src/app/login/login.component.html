@@ -1,0 +1,65 @@
+<app-header></app-header> <br /><br />
+
+<div class="div1">
+  <div class="block1">
+    <p class="block1-p1">Login</p>
+    <p class="block1-p2">
+      Get access to your <br />
+      Orders, Wishlist and <br />Recommendations
+    </p>
+    <img [src]="img" />
+  </div>
+
+
+  <div class="block2">
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+      <mat-form-field appearance="fill" class="mat-form-field1">
+        <mat-label>Enter Email/Mobile Number</mat-label>
+        <input matInput type="text" #u1 formControlName="user" />
+      </mat-form-field>
+      <div class="username-span1">
+      <span
+        *ngIf="user && user.errors?.['required'] && user.touched"
+        style="color: red"
+      >
+        Please Enter the username</span
+      >
+      <span
+        *ngIf="user && user.errors?.['maxlength'] && user.touched"
+        style="color: red"
+      >
+        Name can be max 10 characters long.
+      </span> </div>
+      <br /><br />
+
+      <mat-form-field appearance="fill" class="mat-form-field2">
+        <mat-label>Enter Password</mat-label>
+        <input matInput type="password" #p2 formControlName="password" />
+      </mat-form-field>
+      <div class="username-span2">
+      <span
+        *ngIf="password && password.errors?.['required'] && password.touched"
+        style="color: red"
+      >
+        Please Enter the password</span
+      >
+    </div>
+      <br /><br />
+      <p class="p1">
+        By continuing, you agree to Flipkart's <a href="#" [ngStyle]="{'text-decoration':'none','color':'blue'}">Terms of Use </a> and <a [routerLink]="['/privacypolicy']" [ngStyle]="{'text-decoration':'none','color':'blue'}">Privacy Policy.</a>
+      </p>
+      <button
+        mat-stroked-button
+        color="primary"
+        (click)="check(u1.value, p2.value)"
+        class="mat-button"
+      >
+        Login
+      </button>
+    </form>
+    <h6>{{ message }}</h6>
+    <div class="ancher-create-account">
+      <a href="#" class="create-account"> New to Flipkart? Create an account</a>
+    </div>
+  </div>
+</div>
