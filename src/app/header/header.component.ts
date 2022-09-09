@@ -1,5 +1,7 @@
+import { outputAst } from '@angular/compiler';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from 'src/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -7,22 +9,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  @Input() public cd:any;
-  @Input() public onToggleS: any;
-  
-  //cartItem1: number=0;
-  showMe = true;
+  cartItemValue: number;
+  //@Input()  public a1:number;
   img = '../../assets/flipkart-plus_8d85f4.png';
-  
-  constructor(private router: Router) {}
+
+  constructor(private router: Router, private cartService: CartService) {}
 
   ngOnInit(): void {
-  
+    this.cartItemValue = this.cartService.cartItem;
+    
+    //this.cartService.addCart(shopVar);
+   
+  }
+  onClick(): void {
+    //this.cartItemValue = this.cartItemValue + 1;
+    this.router.navigate(['/cart'])
   }
 
-  onToggle(): void {
-    //this.showMe = !this.showMe;
-      this.onToggleS;
-    //this.router.navigate(['/cart']);
-  }
 }
+/*  this.cartService.getProducts()
+    .subscribe(res=>{
+      this.totalItem = res.length;
+    }) */

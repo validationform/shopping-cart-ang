@@ -1,4 +1,4 @@
-<app-header></app-header>
+
 <div>
   <table>
     <tr>
@@ -9,10 +9,10 @@
       <th>Price</th>
       <th>Quantity</th>
       <th>Total</th>
-      <th>Action</th> 
+      <th>Action</th>
     </tr>
-    <div *ngIf="showMe">
-    <tr *ngFor="let item of shopData; let i = index">
+
+    <tr *ngFor="let item of productAddToCart; let i = index">
       <td>{{ i + 1 }}</td>
       <td>{{ item.productName1 }}</td>
       <td><img src="{{ item.img1 }}" /></td>
@@ -26,6 +26,5 @@
         <button><i class="fas fa-trash-alt"></i>delete</button>
       </td>
     </tr>
-  </div>
   </table>
 </div>

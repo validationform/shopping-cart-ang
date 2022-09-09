@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
 import { ShopComponent } from './shop/shop.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'registration',
+    component: RegistrationComponent,
   },
   {
     path: 'cart',

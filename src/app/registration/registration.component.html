@@ -1,0 +1,138 @@
+<!-- <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+    <label>full name</label>
+    <input type="text" formControlName="fullName"><br>
+    <label>mobile number</label>
+    <input type="number" formControlName="mobile"><br>
+    <label>email address</label>
+    <input type="text" formControlName="email" #p2><br>
+    <label>password</label>
+    <input type="password" formControlName="password"><br><br>
+     <button>Sign up</button>
+</form> -->
+
+
+
+<div class="div1">
+  <div class="block1">
+    <p class="block1-p1">Looks like you're new here!</p>
+    <p class="block1-p2">
+      Sign up with your Email <br />
+      to get started
+    </p>
+    <img [src]="img" />
+  </div>
+  <div class="block2">
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+      <mat-form-field appearance="fill" class="mat-form-field1">
+        <mat-label>Enter Your Full Name</mat-label>
+        <input matInput type="text" formControlName="fullName" #u1 />
+      </mat-form-field>
+      <div class="username-span1-error">
+        <span
+          *ngIf="fullName && fullName.errors?.['required'] && fullName.touched"
+          style="color: red"
+        >
+          Please Enter the username</span
+        >
+        <span
+          *ngIf="fullName && fullName.errors?.['maxlength'] && fullName.touched"
+          style="color: red"
+        >
+          Name can be max 25 characters long.
+        </span>
+      </div>
+      <br /><br />
+      <mat-form-field appearance="fill" class="mat-form-field2">
+        <mat-label>Enter your Email</mat-label>
+        <input matInput type="text" formControlName="email" #u2 />
+      </mat-form-field>
+
+      <div class="email-span2-error">
+        <span
+          *ngIf="email && email.errors?.['required'] && email.touched"
+          style="color: red"
+        >
+          Email can't be empty</span
+        >
+
+        <span
+          *ngIf="email && email.errors?.['email'] && email.touched"
+          style="color: red"
+        >
+          Enter valid emailId</span
+        >
+      </div>
+      <br />
+
+      <mat-form-field appearance="fill" class="mat-form-field3">
+        <mat-label>Enter Your Mobile Number</mat-label>
+        <input matInput type="number" formControlName="mobile" #u3 />
+      </mat-form-field>
+      <div class="email-span3-error">
+        <span
+          *ngIf="mobile && mobile.errors?.['required'] && mobile.touched"
+          style="color: red"
+        >
+          Number can't be empty</span
+        >
+
+        <span
+          *ngIf="mobile && mobile.errors?.['pattern'] && mobile.touched"
+          style="color: red"
+        >
+          Enter 10 digit Mobile Number</span
+        >
+      </div>
+      <mat-form-field appearance="fill" class="mat-form-field4">
+        <mat-label>Enter Your Password</mat-label>
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          formControlName="password"
+          #u4
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <div class="email-span4-error">
+        <span
+          *ngIf="password && password.errors?.['required'] && password.touched"
+          style="color: red"
+        >
+          Password cant't be empty</span
+        >
+
+        <span
+          *ngIf="password && password.errors?.['pattern'] && password.touched"
+          style="color: red"
+          >It should contain number,special charactor,and name
+        </span>
+      </div>
+
+      <button
+        mat-stroked-button
+        color="primary"
+        (click)="check()"
+        class="mat-button"
+        [disabled]="signUpForm.invalid"
+      >
+        Sign Up
+      </button>
+    </form>
+    <button
+      mat-stroked-button
+      color="primary"
+      (click)="exixtingUser()"
+      class="mat-button2"
+    >
+      Existing User? Log in
+    </button>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<app-header [cd]="cartItem" [onToggleS]="onToggle"></app-header>
+<app-header  *ngIf="!showMe"></app-header>
 <div *ngIf="showMe">
   <div *ngFor="let shopVar of shopData1 | async " class="inner-div">
     <div>
@@ -23,10 +23,4 @@
   </div>
 </div>
 <br>
-
 <app-footer></app-footer>
-<app-cart
-  [shopData]="cartArray"
-  [shopAdd]="shopData1"
-  *ngIf="!showMe"
-></app-cart> 

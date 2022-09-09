@@ -1,28 +1,24 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { cart } from '../models/shop';
 import { shopData } from '../models/shop';
 import { HttpClientModule } from '@angular/common/http';
 import { CartService } from 'src/services/cart.service';
-
+import { ProductsDetailsService } from 'src/services/products-details.service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
+  productAddToCart: any;
 
-  @Input() public shopData: any = [];
-  @Input() public cd: any;
-  @Input() public shopAdd: any;
-  //@Input() public onToggleS: any;
-  //showMe =true;
-  //pro:any;
-  constructor(private cart:CartService) { }
+  constructor(
+    private cart: CartService,
+    private productsData: ProductsDetailsService
+  ) {}
 
   ngOnInit(): void {
-    //this.shopData = this.cart.addtoCart(this.shopAdd);
-    //this.onToggleS;
-    //this.showMe= !this.showMe;
+    this.productAddToCart = this.cart.cartArray;
+    console.log('Cart Data=>', this.productAddToCart);
   }
-
 }

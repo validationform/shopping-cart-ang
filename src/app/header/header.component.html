@@ -1,14 +1,14 @@
 <header>
   <img [src]="img" />
-  
+
   <span class="fas fa-search search-icon"></span>
+
   <div class="cart_count">
     <P class="p1">
       <button
         mat-raised-button
-        matBadge="{{ cd }}"
-        [routerLink]="['/cart']"
-        (click)="onToggle()"
+        matBadge=" {{ cartItemValue }} "
+        (click)="onClick()"
       >
         Cart
       </button>
